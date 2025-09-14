@@ -1,5 +1,5 @@
 ---
-import { getPagesInfo } from "../lib/lib";
+import { SocialLinks, getPagesInfo } from "../lib/lib";
 
 interface Props {
   title: string;
@@ -7,6 +7,8 @@ interface Props {
 }
 
 const { title, content } = await getPagesInfo("hero");
+
+const { calendary } = SocialLinks;
 ---
 
 <header
@@ -31,10 +33,11 @@ const { title, content } = await getPagesInfo("hero");
   />
   <div class="space-y-4 sm:space-y-0 sm:space-x-4 animated animate-delay-2">
     <a
-      href="#contacto"
+      href={calendary}
       class="px-8 py-3 btn-primary rounded-full text-lg font-bold inline-block"
+      target="_blank"
     >
-      ¡Quiero impulsar mi negocio!
+      Agendar consultoria gratuita
     </a>
     <a
       href="#servicios"

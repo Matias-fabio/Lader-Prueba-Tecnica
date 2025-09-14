@@ -1,3 +1,12 @@
+export const SocialLinks = {
+  calendary: "https://calendly.com/franco-lader",
+  whatsapp:
+    "https://api.whatsapp.com/send?phone=541125134654&text=Hola!%20Quiero%20m%C3%A1s%20info%20sobre%20el%20servicio%20de%20Desarrollo%20Web",
+  instagram: "https://www.instagram.com/agencialader/",
+  linkedin:
+    "https://www.linkedin.com/company/agencia-lader/posts/?feedView=all",
+};
+
 const domain = "http://localhost:8881";
 
 const apiUrl = `${domain}/wp-json/wp/v2`;
