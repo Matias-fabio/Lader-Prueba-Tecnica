@@ -1,0 +1,16 @@
+---
+import { getServices } from "../lib/lib";
+import Card from "./Card.astro";
+const services = await getServices({ perPage: 4 });
+---
+
+<section id="servicios" class="container mx-auto px-4 py-16 lg:py-24">
+  <h2
+    class="text-3xl lg:text-4xl font-extrabold text-center mb-12 text-[#e1359d]"
+  >
+    Servicios
+  </h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    {services.map((service) => <Card {...service} />)}
+  </div>
+</section>

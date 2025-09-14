@@ -1,0 +1,31 @@
+---
+// src/components/Info.astro
+// Este componente muestra las estadísticas clave del negocio con una animación de contador.
+
+const statistics = [
+  { value: 180, text: "Clientes confiaron en nosotros" },
+  { value: 100, text: "Webs desarrolladas" },
+  { value: 10, text: "Años en el mercado" },
+];
+---
+
+<section class="w-full py-20 px-8 md:px-12 lg:px-24 bg-[#1e173f] text-white">
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center"
+  >
+    {
+      statistics.map((stat) => (
+        <div>
+          <h2
+            class="text-6xl md:text-7xl font-bold text-[#b7f200] mb-2 countup"
+            data-target="{stat.value}"
+            data-prefix="+"
+          >
+            {stat.value}
+          </h2>
+          <p class="text-lg text-gray-300">{stat.text}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

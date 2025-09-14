@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  icon: string;
+  slug: string;
+  featuredImage: string;
+}
+
+const { title, excerpt, icon, slug, featuredImage } = Astro.props;
+---
+
+<div
+  class="flex flex-col items-center justify-start p-6 rounded-3xl text-center bg-white dark:bg-[#1e173f] border border-gray-200 dark:border-gray-800 transition-all duration-300 transform hover:scale-105 hover:border-[#ae5bf6] shadow-md hover:shadow-xl"
+>
+  <div class="mb-4">
+    <img
+      src={featuredImage}
+      alt={title}
+      class="w-14 h-14 rounded-full object-cover bg-[#ae5bf6] p-2"
+    />
+  </div>
+  <h3 class="text-xl font-bold mb-2 text-[#e1359d]">{title}</h3>
+  <p
+    class="text-sm font-light text-gray-600 dark:text-gray-400"
+    set:html={excerpt}
+  />
+</div>

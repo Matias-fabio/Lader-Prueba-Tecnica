@@ -1,0 +1,46 @@
+---
+import { getPagesInfo } from "../lib/lib";
+
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, content } = await getPagesInfo("hero");
+---
+
+<header
+  id="hero"
+  class="container mx-auto px-4 py-16 lg:py-24 text-center w-auto h-full"
+>
+  <div
+    class="p-2.5 backdrop-blur-md rounded-2xl inline-block mb-2 bg-[#b7f200] mt-40"
+  >
+    <span class="text-[#1e173f] text-md font-semibold">
+      Desarrollo Web Profesional
+    </span>
+  </div>
+  <h1 class="text-4xl lg:text-6xl font-black mb-4 leading-tight animated pt-2">
+    {title}<br class="hidden lg:inline" /><span class="text-gradient"
+      >desarrollo web a medida</span
+    >.
+  </h1>
+  <div
+    class="text-lg lg:text-xl font-medium text-gray-300 max-w-3xl mx-auto mb-8 animated animate-delay-1"
+    set:html={content}
+  />
+  <div class="space-y-4 sm:space-y-0 sm:space-x-4 animated animate-delay-2">
+    <a
+      href="#contacto"
+      class="px-8 py-3 btn-primary rounded-full text-lg font-bold inline-block"
+    >
+      ¡Quiero impulsar mi negocio!
+    </a>
+    <a
+      href="#servicios"
+      class="px-8 py-3 rounded-full text-lg font-bold inline-block border-2 border-[#5e17ea] hover:bg-[#5e17ea] transition-colors"
+    >
+      Ver servicios
+    </a>
+  </div>
+</header>

@@ -1,0 +1,61 @@
+---
+// src/components/About.astro
+// Este componente presenta las características de los servicios de desarrollo web en un formato de tarjeta.
+
+const features = [
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#ae5bf6]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Zm4-8a4 4 1 1 1-4-4 4 4 0 0 1 4 4Z"/></svg>`,
+    title: "Diseño personalizado y responsive",
+    description:
+      "Un diseño web único, adaptado a su marca y que se vea perfecto en cualquier dispositivo.",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#5e17ea]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Zm-1-10v4a1 1 0 0 0 2 0v-4a1 1 0 0 0-2 0Zm0-2a1 1 0 1 0 1-1 1 1 0 0 0-1 1Z"/></svg>`,
+    title: "Página web autoadministrable",
+    description:
+      "Actualice su sitio web fácilmente gracias a nuestro sistema de autoadministración y video tutoriales.",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#ae5bf6]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Zm-2-11a1 1 0 0 0 0 2h4a1 1 0 0 0 0-2Zm-2 4a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2Z"/></svg>`,
+    title: "Garantía de satisfacción",
+    description:
+      "Su satisfacción es nuestra prioridad, trabajaremos en su proyecto hasta que esté completamente satisfecho.",
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-[#b7f200]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Zm-3-11a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2Zm0 4a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2Z"/></svg>`,
+    title: "Hosting y dominio gratis por 1 año",
+    description:
+      "Olvídese de pagar por hosting y dominio por un año completo: ¡nosotros lo hacemos por usted!",
+  },
+];
+---
+
+<section
+  id="about"
+  class="py-20 px-4 md:px-8 lg:px-24 bg-[#1e173f] text-gray-800"
+>
+  <div class="max-w-7xl mx-auto">
+    <!-- Título y subtítulo -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold leading-tight mb-2 text-[#b7f200]">
+        ¿Qué incluyen nuestros desarrollos web?
+      </h2>
+      <p class="text-lg text-gray-500">
+        Todo lo que necesita para tener éxito en línea
+      </p>
+    </div>
+
+    <!-- Cuadrícula de tarjetas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        features.map((feature) => (
+          <div class="bg-gray-100 rounded-2xl p-8 shadow-sm transition-transform duration-300 hover:scale-[1.02] flex flex-col items-start text-left">
+            <div class="flex-shrink-0 mb-4" set:html={feature.icon} />
+            <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
