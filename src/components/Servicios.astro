@@ -14,7 +14,7 @@ const services = await getServices({ perPage: 4 });
   >
     Servicios
   </h2>
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 behavior:smooth">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
     {services.map((service) => <Card {...service} />)}
   </div>
 </section>
